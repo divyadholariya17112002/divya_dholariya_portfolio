@@ -1,17 +1,24 @@
+import 'dart:io';
+
 import 'package:file_saver/file_saver.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
+import 'package:path_provider/path_provider.dart';
+import 'package:share_plus/share_plus.dart';
 
 import '../../constants/asset_constants.dart';
 import 'resume_pdf_generator.dart';
 
-/// Handles resume download: uses bundled PDF asset when available,
-/// otherwise generates a PDF from portfolio data.
+/// Handles resume download/sharing:
+/// - Web & desktop: triggers a browser/OS download via FileSaver.
+/// - Android & iOS: writes the PDF to a temp file and opens the system
+///   share sheet so the user can save, open, or send the file.
 class ResumeService {
   const ResumeService();
 
   static const String _fileName = 'Divya_Dholariya_Resume';
 
-  /// Downloads the resume as a PDF file to the user's device.
+  /// Downloads or shares the resume as a PDF file.
   Future<ResumeDownloadResult> downloadResume() async {
     try {
       final assetBytes = await _loadBundledPdf();
@@ -20,18 +27,42 @@ class ResumeService {
           ? ResumeDownloadSource.bundledAsset
           : ResumeDownloadSource.generated;
 
-      await FileSaver.instance.saveFile(
-        name: _fileName,
-        bytes: bytes,
-        fileExtension: 'pdf',
-        mimeType: MimeType.pdf,
-      );
+      if (kIsWeb || _isDesktop) {
+        // Web / desktop: use FileSaver to trigger a browser download.
+        await FileSaver.instance.saveFile(
+          name: _fileName,
+          bytes: bytes,
+          fileExtension: 'pdf',
+          mimeType: MimeType.pdf,
+        );
+      } else {
+        // Android / iOS: write to a temp file then open the share sheet.
+        // Share.shareXFiles is the correct API for share_plus ^10.x.
+        final dir = await getTemporaryDirectory();
+        final file = File('${dir.path}/$_fileName.pdf');
+        await file.writeAsBytes(bytes, flush: true);
+
+        final xFile = XFile(
+          file.path,
+          mimeType: 'application/pdf',
+          name: '$_fileName.pdf',
+        );
+        await Share.shareXFiles(
+          [xFile],
+          subject: '$_fileName.pdf',
+        );
+      }
 
       return ResumeDownloadResult.success(source: source);
     } catch (error) {
       return ResumeDownloadResult.failure(message: error.toString());
     }
   }
+
+  /// True when running natively on a desktop OS (Windows / macOS / Linux).
+  bool get _isDesktop =>
+      !kIsWeb &&
+      (Platform.isWindows || Platform.isMacOS || Platform.isLinux);
 
   /// Loads the bundled resume PDF from assets if it exists and is valid.
   Future<Uint8List?> _loadBundledPdf() async {

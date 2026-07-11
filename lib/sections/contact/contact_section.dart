@@ -258,7 +258,7 @@ class _ContactSectionState extends State<ContactSection> {
             ),
             const SizedBox(height: AppConstants.spacingMd),
             Text(
-              'Surat, Gujarat, India',
+              AppStrings.location,
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
                 color: AppColors.textSecondary,
               ),

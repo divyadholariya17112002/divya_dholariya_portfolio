@@ -14,7 +14,7 @@ abstract final class PortfolioData {
     ExperienceModel(
       company: 'LogicGo Infotech',
       role: 'Flutter Developer',
-      period: '2021 – 2022',
+      period: 'May 2026 – June 2026',
       isCurrent: true,
       highlights: [
         'Omeeba Social Platform',
@@ -28,7 +28,7 @@ abstract final class PortfolioData {
     ExperienceModel(
       company: 'Hexotix Pvt Ltd',
       role: 'Flutter Developer',
-      period: '2022 – 2023',
+      period: 'July 2025 – Dec 2025',
       highlights: [
         'Reveal Diamond Detector',
         'Python Backend Integration',
@@ -41,7 +41,7 @@ abstract final class PortfolioData {
     ExperienceModel(
       company: 'Tecocraft Infusion',
       role: 'Junior Flutter Developer',
-      period: '2023 – Present',
+      period: 'January 2024-June 2025',
       highlights: [
         'Milk Delivery Application',
         '75+ TV Remote Apps',
@@ -53,7 +53,7 @@ abstract final class PortfolioData {
     ExperienceModel(
       company: 'iFlutter',
       role: 'Intern Flutter Developer',
-      period: '2023 – Present',
+      period: 'July 2023-December 2023',
       highlights: [
         'News Application',
         'Gallery Application',

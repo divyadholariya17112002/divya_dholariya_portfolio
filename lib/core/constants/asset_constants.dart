@@ -4,16 +4,27 @@ abstract final class AssetConstants {
   static const String iconsPath = 'assets/icons';
   static const String resumePath = 'assets/resume';
 
+  // // Profile
+  // static const String profileImage = '$imagesPath/profile.svg';
+  //
+  // // Project screenshots (SVG placeholders — replace with Play Store PNGs when available)
+  // static const String projectReveal = '$imagesPath/project_reveal.svg';
+  // static const String projectHealth = '$imagesPath/project_health.svg';
+  // static const String projectCenterGrade = '$imagesPath/project_center_grade.svg';
+  // static const String projectMilk = '$imagesPath/project_milk.svg';
+  // static const String projectTv = '$imagesPath/project_tv.svg';
+  // static const String projectOmeeba = '$imagesPath/project_omeeba.svg';
+
   // Profile
   static const String profileImage = '$imagesPath/profile.svg';
 
   // Project screenshots (SVG placeholders — replace with Play Store PNGs when available)
-  static const String projectReveal = '$imagesPath/project_reveal.svg';
-  static const String projectHealth = '$imagesPath/project_health.svg';
-  static const String projectCenterGrade = '$imagesPath/project_center_grade.svg';
-  static const String projectMilk = '$imagesPath/project_milk.svg';
-  static const String projectTv = '$imagesPath/project_tv.svg';
-  static const String projectOmeeba = '$imagesPath/project_omeeba.svg';
+  static const String projectReveal = '$imagesPath/jtr.svg';
+  static const String projectHealth = '$imagesPath/hc2.svg';
+  static const String projectCenterGrade = '$imagesPath/center_grade.svg';
+  static const String projectMilk = '$imagesPath/a2_milk.svg';
+  static const String projectTv = '$imagesPath/ac_remote.svg';
+  static const String projectOmeeba = '$imagesPath/omeeba.svg';
 
   // Resume
   static const String resumePdf = '$resumePath/resume.pdf';

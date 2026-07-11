@@ -14,12 +14,12 @@ class StatCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GlassContainer(
-      padding: const EdgeInsets.all(AppConstants.spacingXl),
+      padding: const EdgeInsets.all(AppConstants.spacingXs),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           if (stat.icon != null) ...[
-            Icon(stat.icon, size: 36, color: AppColors.primaryPurple),
+            Icon(stat.icon, size: 35, color: AppColors.primaryPurple),
             const SizedBox(height: AppConstants.spacingMd),
           ],
           AnimatedCounter(

@@ -24,7 +24,7 @@ abstract final class AppStrings {
   static const String location = 'Surat, Gujarat, India';
   static const String linkedInUrl = 'https://linkedin.com/in/divya-dholariya';
   // static const String githubUrl = 'https://github.com/divya-dholariya';
-  static const String githubUrl = 'https://github.com/divyalogicgo';
+  static const String githubUrl = 'https://github.com/divyadholariya17112002';
   static const String copyright = '© 2026 Divya Dholariya. All rights reserved.';
 
   /// Typing animation phrases displayed in the hero section.

@@ -12,16 +12,17 @@ import 'social_link_model.dart';
 abstract final class PortfolioData {
   static const List<ExperienceModel> experiences = [
     ExperienceModel(
-      company: 'Tecocraft Infusion',
-      role: 'Junior Flutter Developer',
-      period: '2023 – Present',
+      company: 'LogicGo Infotech',
+      role: 'Flutter Developer',
+      period: '2021 – 2022',
       isCurrent: true,
       highlights: [
-        'Milk Delivery Application',
-        '75+ TV Remote Apps',
-        'Firebase Integration',
-        'Payment Gateway Integration',
-        'App Migration Projects',
+        'Omeeba Social Platform',
+        'Lottery Application',
+        'Health Compass App',
+        'REST API Integration',
+        'Quality Assurance',
+        'Bug Fixing & Optimization',
       ],
     ),
     ExperienceModel(
@@ -38,16 +39,27 @@ abstract final class PortfolioData {
       ],
     ),
     ExperienceModel(
-      company: 'LogicGo Infotech',
-      role: 'Flutter Developer',
-      period: '2021 – 2022',
+      company: 'Tecocraft Infusion',
+      role: 'Junior Flutter Developer',
+      period: '2023 – Present',
       highlights: [
-        'Omeeba Social Platform',
-        'Lottery Application',
-        'Health Compass App',
-        'REST API Integration',
-        'Quality Assurance',
-        'Bug Fixing & Optimization',
+        'Milk Delivery Application',
+        '75+ TV Remote Apps',
+        'Firebase Integration',
+        'Payment Gateway Integration',
+        'App Migration Projects',
+      ],
+    ),
+    ExperienceModel(
+      company: 'iFlutter',
+      role: 'Intern Flutter Developer',
+      period: '2023 – Present',
+      highlights: [
+        'News Application',
+        'Gallery Application',
+        'Hobby Application',
+        'Rest APIs',
+        'Local Storage',
       ],
     ),
   ];
@@ -94,6 +106,8 @@ abstract final class PortfolioData {
         'IoT',
         'Bluetooth',
       ],
+      googlePlayUrl:
+      'https://play.google.com/store/apps/details?id=org.jtr.jtr_mobile&pcampaignid=web_share',
       category: 'Industrial',
     ),
     ProjectModel(
@@ -131,16 +145,20 @@ abstract final class PortfolioData {
           'order management.',
       imagePath: AssetConstants.projectMilk,
       technologies: ['Flutter', 'Firebase', 'MVVM', 'Razorpay', 'UPI'],
+      googlePlayUrl:
+      'https://play.google.com/store/apps/details?id=com.girorganic.user&pcampaignid=web_share',
       category: 'E-Commerce',
     ),
     ProjectModel(
-      title: 'Smart TV & AC Remote Apps',
+      title: '75+ Smart TV & AC Remote Apps',
       role: 'Flutter Developer',
       description:
           'Migrated and maintained more than 75 Flutter applications by upgrading '
           'Flutter SDK, Android SDK, JDK, AdMob, and third-party packages.',
       imagePath: AssetConstants.projectTv,
       technologies: ['Flutter', 'Android SDK', 'AdMob'],
+      googlePlayUrl:
+      'https://play.google.com/store/apps/details?id=com.fas.universal.remote.control&pcampaignid=web_share',
       category: 'Migration',
     ),
     ProjectModel(
@@ -151,6 +169,8 @@ abstract final class PortfolioData {
           'REST APIs, and performing QA testing.',
       imagePath: AssetConstants.projectOmeeba,
       technologies: ['Flutter', 'REST API', 'UI'],
+      googlePlayUrl:
+      'https://apps.apple.com/in/app/omeeba/id6753140500',
       category: 'Social',
     ),
   ];
@@ -160,7 +180,7 @@ abstract final class PortfolioData {
       value: 3,
       label: 'Years Experience',
       suffix: '+',
-      prefix: 'Nearly ',
+      // prefix: 'Nearly ',
       icon: Icons.work_history,
     ),
     StatisticModel(

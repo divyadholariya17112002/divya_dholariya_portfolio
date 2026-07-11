@@ -58,12 +58,25 @@ class FooterSection extends StatelessWidget {
               const Divider(),
               const SizedBox(height: AppConstants.spacingLg),
               Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Text(
                     AppStrings.copyright,
                     style: Theme.of(context).textTheme.bodySmall,
                   ),
+                  // _BackToTopButton(
+                  //   onPressed: () => navigationService.scrollToTop(),
+                  // ),
+                ],
+              ),
+              SizedBox(height: 8,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  // Text(
+                  //   AppStrings.copyright,
+                  //   style: Theme.of(context).textTheme.bodySmall,
+                  // ),
                   _BackToTopButton(
                     onPressed: () => navigationService.scrollToTop(),
                   ),

@@ -1,4 +1,4 @@
-name: flutter_project
+name: divya_dholariya_portfolio
 description: "Premium Flutter Web Portfolio - Divya Dholariya"
 publish_to: 'none'
 version: 1.0.0+1
@@ -27,6 +27,21 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^6.0.0
+  flutter_launcher_icons: ^0.14.4
+
+flutter_launcher_icons:
+  android: true
+  ios: true
+
+  image_path: "assets/images/app_logos.png"
+
+  min_sdk_android: 21
+
+  web:
+    generate: true
+    image_path: "assets/images/app_logos.png"
+    background_color: "#FFFFFF"
+    theme_color: "#42A5F5"
 
 flutter:
   uses-material-design: true
